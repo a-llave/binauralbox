@@ -1,0 +1,11 @@
+binauralbox/Grid.py
+binauralbox/HrtfData.py
+binauralbox/__init__.py
+binauralbox/export_hrir_to_matfile.py
+binauralbox/import_hrir_from_matfile.py
+binauralbox/is_hrtfdata.py
+binauralbox.egg-info/PKG-INFO
+binauralbox.egg-info/SOURCES.txt
+binauralbox.egg-info/dependency_links.txt
+binauralbox.egg-info/not-zip-safe
+binauralbox.egg-info/top_level.txt
