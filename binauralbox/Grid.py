@@ -1,3 +1,19 @@
+"""
+Description: Grid class
+
+Author: Adrien Llave - CentraleSupelec
+Date: 28/03/2018
+
+Version: 1.1
+
+Date    | Auth. | Vers.  |  Comments
+18/03/28  ALl     1.0       Initialization
+18/12/03  ALl     1.1       Code factorization
+
+TODO: Add lateral-polar coordinates system
+
+"""
+
 import numpy as np
 import utils_llave as u
 
@@ -13,19 +29,19 @@ class Grid:
         self.coords_m = coords_m
 
     def convert_coordinates(self, new_norm_s):
+
+        if self.norm_s == new_norm_s:
+            return
+
         if self.norm_s == 'cartesian':
-            if new_norm_s == 'cartesian':
-                pass
-            elif new_norm_s == 'spherical_1':
+            if new_norm_s == 'spherical_1':
                 self.coords_m[:, 0], self.coords_m[:, 1], self.coords_m[:, 2] = u.cart2sph(self.coords_m[:, 0][np.newaxis, :],
                                                                                            self.coords_m[:, 1][np.newaxis, :],
                                                                                            self.coords_m[:, 2][np.newaxis, :])
             else:
                 print('Unknown coordinates norm')
         elif self.norm_s == 'spherical_1':
-            if new_norm_s == 'spherical_1':
-                pass
-            elif new_norm_s == 'cartesian':
+            if new_norm_s == 'cartesian':
                 self.coords_m[:, 0], self.coords_m[:, 1], self.coords_m[:, 2] = u.sph2cart(self.coords_m[:, 0],
                                                                                            self.coords_m[:, 1],
                                                                                            self.coords_m[:, 2])
